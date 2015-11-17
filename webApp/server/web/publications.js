@@ -23,7 +23,6 @@ Meteor.publish('ClocksforMap', function(bottomLeft, topRight) {
   return clocks;
 });
 
-//>>>>>>
 
 Meteor.publish('ClocksforPathMap', function(pathId,bottomLeft, topRight) {
   if (!bottomLeft && !topRight) {
@@ -34,6 +33,16 @@ Meteor.publish('ClocksforPathMap', function(pathId,bottomLeft, topRight) {
   // {_id: {$in: clocksinPath}}
   clocks = Clocks.find({_id: {$in: clocksinPath}, location: { $exists: true }, location: {$geoWithin: {$box: [bottomLeft, topRight]}}});
   return clocks;
+});
+
+//>>>>>>
+
+Meteor.publish('MeasumentsforMap', function(bottomLeft, topRight) {
+  if (!bottomLeft && !topRight) {
+    return [];
+  }
+  measurements = Measurements.find({location: { $exists: true }, location: {$geoWithin: {$box: [bottomLeft, topRight]}}});
+  return measurements;
 });
 
 

@@ -72,7 +72,7 @@ if (Meteor.isServer) {
       return Comments.insert(opts);
     },    
     'comments.delete' : function (commentId) {
-      check(text, String);
+      check(commentId, String);
       return Comments.remove(commentId);
     }
   });

@@ -102,6 +102,13 @@ Router.route('/measurements', {
   }  
 });
 
+Router.route('/measurements/map', {
+  name: 'measurements.map',
+  action: function () {
+    this.render('MeasurementsMap');
+  }  
+});
+
 Router.route('/measurements/:_id', {
   name: 'measurements.details',
   controller: 'MeasurementsDetailsController',

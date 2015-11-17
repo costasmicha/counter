@@ -10,3 +10,8 @@ Template.registerHelper('formatdate',function(date){
     return date;
   }
 });
+
+Template.registerHelper('successify', function(bool) {
+	//reverse don't get confused
+  return bool ?  "'Οχι" : "Ναι";
+});

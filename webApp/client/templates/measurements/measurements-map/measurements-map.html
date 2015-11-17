@@ -1,0 +1,34 @@
+<template name="MeasurementsMap">
+
+{{#if geolocationError}}
+
+	<div class="ui negative message">
+		<i class="close icon"></i>
+		<div class="header">
+			Λάθος κατά τον εντοπισμό της τοποθεσίας σας!
+		</div>
+		<p>Ενεργοποιήστε την επιλογή της τοποθεσίας του browser</p>
+	</div>
+
+{{/if}}
+
+	<section class="ui vertical segment">		
+		<div class="ui container">
+			<div class="ui raised segment">
+				<div id="measurementMap">
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+
+<template name="measurementMarker">
+  <div class="ui map basic segment">
+  		<div class="ui divided list">
+  			<div class="item">Τιμή: {{value}}</div>
+  			<div class="item">Επιτυχία: {{successify failure}}</div>
+  			<div class="item">Ημερομηνία: {{formatdate createdAt}}</div>
+  		</div>
+  </div>
+</template>

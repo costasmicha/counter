@@ -1,0 +1,16 @@
+#measurementMap {
+	min-height: 500px;
+}
+
+
+.leaflet-div-icon.fail {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
